@@ -1,0 +1,119 @@
+<Schema name="Census">
+  <Cube name="Census" visible="true" cache="true" enabled="true">
+    <Table name="census" schema="sys">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="dage" name="Faixa Etaria">
+      <Hierarchy name="Faixa Etaria" visible="true" hasAll="true" primaryKey="id">
+        <Table name="dim_age" schema="sys">
+        </Table>
+        <Level name="Faixa Etaria" visible="true" column="id" nameColumn="id" uniqueMembers="false" captionColumn="description">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="iavail" name="Disponibilidade Trabalho">
+      <Hierarchy name="Disponibilidade Trabalho" visible="true" hasAll="true" primaryKey="id">
+        <Table name="dim_avail" schema="sys">
+        </Table>
+        <Level name="Disponibilidade Trabalho" visible="true" column="id" nameColumn="id" uniqueMembers="false" captionColumn="description">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="icitizen" name="Nacionalidade">
+      <Hierarchy name="Nacionalidade" visible="true" hasAll="true" primaryKey="id">
+        <Table name="dim_citizen" schema="sys">
+        </Table>
+        <Level name="Nacionalidade" visible="true" column="id" nameColumn="id" uniqueMembers="false" captionColumn="description">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="iclass" name="Tipo Emprego">
+      <Hierarchy name="Tipo Emprego" visible="true" hasAll="true" primaryKey="id">
+        <Table name="dim_class" schema="sys">
+        </Table>
+        <Level name="Tipo Emprego" visible="true" column="id" nameColumn="id" uniqueMembers="false" captionColumn="description">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="ienglish" name="Fluencia Inglês">
+      <Hierarchy name="Fluencia Inglês" visible="true" hasAll="true" primaryKey="id">
+        <Table name="dim_english" schema="sys">
+        </Table>
+        <Level name="Fluencia Inglês" visible="true" column="id" nameColumn="id" uniqueMembers="false" captionColumn="description">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+    <Dimension type="StandardDimension" visible="true" foreignKey="ifertil" name="Número de filhos">
+      <Hierarchy name="Número de filhos" visible="true" hasAll="true" primaryKey="id">
+        <Table name="dim_fertil" schema="sys">
+        </Table>
+        <Level name="Número de filhos" visible="true" column="id" nameColumn="id" uniqueMembers="false" captionColumn="description">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="imeans" name="Condução para o Trabalho">
+      <Hierarchy name="Condução para o Trabalho" visible="true" hasAll="true" primaryKey="id">
+        <Table name="dim_mean" schema="sys">
+        </Table>
+        <Level name="Condução para o Trabalho" visible="true" column="id" nameColumn="id" uniqueMembers="false" captionColumn="description">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+<Dimension type="StandardDimension" visible="true" foreignKey="imarital" name="Estado Civil">
+      <Hierarchy name="Estado Civil" visible="true" hasAll="true" primaryKey="id">
+        <Table name="dim_mertial" schema="sys">
+        </Table>
+        <Level name="Estado Civil" visible="true" column="id" nameColumn="id" uniqueMembers="false" captionColumn="description">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+
+<Dimension type="StandardDimension" visible="true" foreignKey="imilitary" name="Militar">
+      <Hierarchy name="Militar" visible="true" hasAll="true" primaryKey="id">
+        <Table name="dim_military" schema="sys">
+        </Table>
+        <Level name="Militar" visible="true" column="id" nameColumn="id" uniqueMembers="false" captionColumn="description">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+
+<Dimension type="StandardDimension" visible="true" foreignKey="ischool" name="Formação escolar">
+      <Hierarchy name="Formação escolar" visible="true" hasAll="true" primaryKey="id">
+        <Table name="dim_school" schema="sys">
+        </Table>
+        <Level name="Formação escolar" visible="true" column="id" nameColumn="id" uniqueMembers="false" captionColumn="description">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+
+<Dimension type="StandardDimension" visible="true" foreignKey="isex" name="Genero">
+      <Hierarchy name="Genero" visible="true" hasAll="true" primaryKey="id">
+        <Table name="dim_sex" schema="sys">
+        </Table>
+        <Level name="Genero" visible="true" column="id" nameColumn="id" uniqueMembers="false" captionColumn="description">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+
+<Dimension type="StandardDimension" visible="true" foreignKey="iyearsch" name="Nivel escolar">
+      <Hierarchy name="Nivel Escolar" visible="true" hasAll="true" primaryKey="id">
+        <Table name="dim_yearsch" schema="sys">
+        </Table>
+        <Level name="Nivel Escolar" visible="true" column="id" nameColumn="id" uniqueMembers="false" captionColumn="description">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+
+
+
+
+    <Measure name="qt" column="caseid" aggregator="distinct-count" visible="true">
+    </Measure>
+  </Cube>
+
+</Schema>
