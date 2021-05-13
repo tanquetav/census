@@ -1,0 +1,31 @@
+GET /census/_search
+{
+  "size": 0, 
+  "aggs": {
+    "age": {
+      "terms": {"field":"dim_dAge"},
+      "aggs": {
+        "sex": {
+          "terms": {"field":"dim_iSex"}
+        }
+      }
+    }
+  }
+}
+
+
+GET /census/_search
+{
+  "size": 0,
+  "aggs": {
+    "tt": {
+      "composite": {
+        "sources": [
+          {"age": { "terms": {"field": "dim_dAge"}}},
+          {"sex": { "terms": {"field": "dim_iSex"}}}
+        ]
+      }
+    }
+  }
+}
+
